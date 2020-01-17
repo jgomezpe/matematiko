@@ -24,9 +24,7 @@ public class UniformPick implements Pick{
 	   * @return Index of the selected candidate solution
 	   */
 	  @Override
-	  public int choose_one( double[] q ){
-	    return choose_one(new Uniform(q.length), q);
-	  }
+	  public int choose_one( double[] q ){ return choose_one(new Uniform(q.length), q); }
 
 	  /**
 	   * Selects a subset of candidate solutions from a set of candidates
