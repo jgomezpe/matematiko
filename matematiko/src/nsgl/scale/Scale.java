@@ -20,7 +20,7 @@ public interface Scale<T> {
     @SuppressWarnings("unchecked")
 	default T apply( T x ){ return fastApply((T)Copyable.cast(x).copy()); }
     
-    default ArrayInterface<T> apply( ArrayInterface<T> a ){
+    default ArrayInterface<T> array( ArrayInterface<T> a ){
         ArrayInterface<T> v = a.instance(a.size());
         int i=0;
         Iterator<T> iter = a.iterator();
@@ -28,7 +28,7 @@ public interface Scale<T> {
         return v;
     }
     
-    default ArrayInterface<T> fastApply( ArrayInterface<T> a ){
+    default ArrayInterface<T> fastArray( ArrayInterface<T> a ){
     	try{ for( int i=0; i<a.size(); i++ ) a.set(i, fastApply(a.get(i))); }catch(Exception e){}
     	return a;
     }

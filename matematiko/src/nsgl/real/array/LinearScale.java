@@ -1,7 +1,6 @@
 package nsgl.real.array;
 import java.util.Iterator;
 
-import nsgl.generic.array.ArrayInterface;
 import nsgl.scale.Invertable;
 import nsgl.real.LinearScale01;
 
@@ -10,13 +9,12 @@ public class LinearScale implements Invertable<double[]> {
     protected double originalMin;
     protected LinearScale01[] scale;
 
-    public LinearScale( ArrayInterface<double[]> a ){
+    public LinearScale( Iterable<double[]> a ){
     	try{
-    		double[] min = a.get(0).clone();
+    		Iterator<double[]> iter = a.iterator();
+    		double[] min = iter.next().clone();
     		double[] max = min.clone();
     		double[] tmp;
-    		Iterator<double[]> iter = a.iterator();
-    		iter.next();
     		while( iter.hasNext()){
     			tmp = iter.next();
     			for( int j=0; j<min.length; j++ ){

@@ -1,4 +1,4 @@
-package nsgl.algebra;
+package nsgl.algebra.linear;
 import nsgl.copy.Copyable;
 
 /**

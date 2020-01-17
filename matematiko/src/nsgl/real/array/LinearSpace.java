@@ -11,7 +11,7 @@ import nsgl.real.array.Util;
  * @version 1.0
  *
  */
-public class LinearSpace implements nsgl.algebra.LinearSpace<double[]> {
+public class LinearSpace implements nsgl.algebra.linear.LinearSpace<double[]> {
     @Override
     public double[] identity( double[] x ){
         return Util.create(x.length, 0.0);

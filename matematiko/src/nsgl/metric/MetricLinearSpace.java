@@ -4,7 +4,7 @@
  */
 package nsgl.metric;
 
-import nsgl.algebra.LinearSpace;
+import nsgl.algebra.linear.LinearSpace;
 
 /**
  *

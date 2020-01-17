@@ -18,7 +18,7 @@ public interface Invertable<T> extends Scale<T>{
     @SuppressWarnings("unchecked")
 	default T inverse( T x ){ return fastInverse((T)Copyable.cast(x).copy()); }
     
-    default ArrayInterface<T> inverse( ArrayInterface<T> a ){
+    default ArrayInterface<T> inverseArray( ArrayInterface<T> a ){
         ArrayInterface<T> v = a.instance(a.size());
         int i=0;
         Iterator<T> iter = a.iterator();
@@ -26,7 +26,7 @@ public interface Invertable<T> extends Scale<T>{
         return v;
     } 
     
-    default ArrayInterface<T> fastInverse( ArrayInterface<T> a ){
+    default ArrayInterface<T> fastInverseArray( ArrayInterface<T> a ){
         try{ for( int i=0; i<a.size(); i++ ) a.set(i, fastInverse(a.get(i))); }catch(Exception e){}
         return a;
     }    
