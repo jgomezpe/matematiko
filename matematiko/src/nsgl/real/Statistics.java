@@ -121,4 +121,6 @@ public class Statistics {
         values[4] = deviation;
         return values;
     }
+    
+    public static double[] get( double[] x ) { return (new Statistics(x)).get(); }
 }

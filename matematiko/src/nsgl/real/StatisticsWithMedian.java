@@ -72,5 +72,7 @@ public class StatisticsWithMedian extends Statistics{
         values[4] = variance;
         values[5] = deviation;
         return values;
-    }    
+    }  
+    
+    public static double[] get( double[] x ) { return (new StatisticsWithMedian(x)).get(); }    
 }
