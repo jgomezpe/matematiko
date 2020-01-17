@@ -2,7 +2,7 @@ package nsgl.real.pick;
 
 import nsgl.integer.Order;
 import nsgl.integer.array.Sorted;
-import nsgl.integer.RouletteGenerator;
+import nsgl.integer.random.Roulette;
 
 public class Elitism implements Pick{
 	  /**
@@ -81,7 +81,7 @@ public class Elitism implements Pick{
 	          for (int i = 0; i < k; i++) {
 	              weight[i] = (k - i) / total;
 	          }
-	          RouletteGenerator generator = new RouletteGenerator(weight);
+	          Roulette generator = new Roulette(weight);
 	          n -= m;
 	          int[] index = generator.generate(n);
 	          for (int i=0; i<n; i++) {

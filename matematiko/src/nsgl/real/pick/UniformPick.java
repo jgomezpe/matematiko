@@ -1,5 +1,7 @@
 package nsgl.real.pick;
 
+import nsgl.integer.random.Uniform;
+
 public class UniformPick implements Pick{
 	  /**
 	   * Default constructor
@@ -12,7 +14,7 @@ public class UniformPick implements Pick{
 	   * @param q Quality associated to each candidate solution
 	   * @return Index of the selected candidate solution
 	   */
-	  protected int choose_one( nsgl.integer.UniformGenerator g, double[] q ){
+	  protected int choose_one( Uniform g, double[] q ){
 	    return g.next();
 	  }
 
@@ -23,7 +25,7 @@ public class UniformPick implements Pick{
 	   */
 	  @Override
 	  public int choose_one( double[] q ){
-	    return choose_one(new nsgl.integer.UniformGenerator(q.length), q);
+	    return choose_one(new Uniform(q.length), q);
 	  }
 
 	  /**
@@ -34,7 +36,7 @@ public class UniformPick implements Pick{
 	   */
 	  @Override
 	  public int[] apply( int n, double[] q){
-		nsgl.integer.UniformGenerator g =  new nsgl.integer.UniformGenerator(q.length);
+		Uniform g =  new Uniform(q.length);
 	    return g.generate(n);
 	  }
 	  

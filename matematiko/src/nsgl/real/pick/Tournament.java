@@ -1,6 +1,6 @@
 package nsgl.real.pick;
 
-import nsgl.integer.UniformGenerator;
+import nsgl.integer.random.Uniform;
 import nsgl.integer.array.DynArray;
 
 public class Tournament extends UniformPick{
@@ -40,7 +40,7 @@ public class Tournament extends UniformPick{
 	   * @return Index of the selected candidate solution
 	   */
 	  @Override
-	  protected int choose_one( UniformGenerator g, double[] q ){
+	  protected int choose_one( Uniform g, double[] q ){
 	    double[] candidates = new double[m];
 	    DynArray indices = new DynArray();
 	    for( int i=0; i<m; i++ ){
