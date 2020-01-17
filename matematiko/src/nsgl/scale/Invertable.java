@@ -12,7 +12,7 @@ import nsgl.copy.Copyable;
  *
  * @author jgomez
  */
-public interface InvertableScale<T> extends Scale<T>{
+public interface Invertable<T> extends Scale<T>{
     public T fastInverse( T x );
     
     @SuppressWarnings("unchecked")

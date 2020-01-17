@@ -10,9 +10,9 @@ import nsgl.scale.Scale;
  *
  * @author jgomez
  */
-public class RealVectorSphereNormalization implements Scale<double[]>{
-    protected RealVectorDotProduct dot = new RealVectorDotProduct();
-    protected RealVectorSpace scale = new RealVectorSpace();
+public class SphereNormalization implements Scale<double[]>{
+    protected DotProduct dot = new DotProduct();
+    protected LinearSpace scale = new LinearSpace();
   /**
    * Applies the transformation on the data record
    * @param x Data record to be transformed

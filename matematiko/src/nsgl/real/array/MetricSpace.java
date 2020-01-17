@@ -11,10 +11,10 @@ import nsgl.metric.QuasiMetric;
  *
  * @author jgomez
  */
-public class RealVectorMetricSpace extends RealVectorSpace 
+public class MetricSpace extends LinearSpace 
         implements MetricLinearSpace<double[]> {
     protected QuasiMetric<double[]> metric;
-    public RealVectorMetricSpace( QuasiMetric<double[]> metric ){
+    public MetricSpace( QuasiMetric<double[]> metric ){
         this.metric = metric;
     }
     @Override

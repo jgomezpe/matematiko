@@ -2,15 +2,15 @@ package nsgl.real.array;
 import java.util.Iterator;
 
 import nsgl.generic.array.ArrayInterface;
-import nsgl.scale.InvertableScale;
-import nsgl.real.LinealScale01;
+import nsgl.scale.Invertable;
+import nsgl.real.LinearScale01;
 
 
-public class RealVectorLinealScale implements InvertableScale<double[]> {
+public class LinearScale implements Invertable<double[]> {
     protected double originalMin;
-    protected LinealScale01[] scale;
+    protected LinearScale01[] scale;
 
-    public RealVectorLinealScale( ArrayInterface<double[]> a ){
+    public LinearScale( ArrayInterface<double[]> a ){
     	try{
     		double[] min = a.get(0).clone();
     		double[] max = min.clone();
@@ -29,26 +29,26 @@ public class RealVectorLinealScale implements InvertableScale<double[]> {
     				}
     			}
     		}	
-            scale = new LinealScale01[min.length];
+            scale = new LinearScale01[min.length];
             for( int i=0; i<scale.length; i++ ){
-                scale[i] = new LinealScale01(min[i], max[i]);
+                scale[i] = new LinearScale01(min[i], max[i]);
             }
       }catch(Exception e){}      
     }
     
-    public RealVectorLinealScale( double[] min, double[] max ){
-        scale = new LinealScale01[min.length];
+    public LinearScale( double[] min, double[] max ){
+        scale = new LinearScale01[min.length];
         for( int i=0; i<scale.length; i++ ){
-            scale[i] = new LinealScale01(min[i], max[i]);
+            scale[i] = new LinearScale01(min[i], max[i]);
         }
     }
 
 
-    public RealVectorLinealScale( double[] originalMin, double[] originalMax,
+    public LinearScale( double[] originalMin, double[] originalMax,
                              double[] targetMin, double[] targetMax ){
-        scale = new LinealScale01[originalMin.length];
+        scale = new LinearScale01[originalMin.length];
         for( int i=0; i<scale.length; i++ ){
-            scale[i] = new nsgl.real.LinealScale(originalMin[i], originalMax[i], targetMin[i], targetMax[i]);
+            scale[i] = new nsgl.real.LinearScale(originalMin[i], originalMax[i], targetMin[i], targetMax[i]);
         }
     }
 

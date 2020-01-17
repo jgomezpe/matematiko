@@ -8,7 +8,7 @@ package nsgl.real.array;
  *
  * @author jgomez
  */
-public class RealVectorDotProduct {
+public class DotProduct {
     public double apply(double[] x, double[] y){
         int n = (x.length<y.length)?x.length:y.length;
         double prod = 0.0;

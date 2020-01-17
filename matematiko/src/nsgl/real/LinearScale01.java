@@ -1,12 +1,12 @@
 package nsgl.real;
 
-import nsgl.scale.InvertableScale;
+import nsgl.scale.Invertable;
 
-public class LinealScale01 implements InvertableScale<Double>{
+public class LinearScale01 implements Invertable<Double>{
     protected double min;
     protected double length;
     
-    public LinealScale01( double min, double max ){
+    public LinearScale01( double min, double max ){
         this.min = min;
         length = max - min;
     }

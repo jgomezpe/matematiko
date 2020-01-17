@@ -4,19 +4,19 @@ package nsgl.real;
  *
  * @author jgomez
  */
-public class LinealScale extends LinealScale01{
-    protected LinealScale01 inverse;
+public class LinearScale extends LinearScale01{
+    protected LinearScale01 inverse;
 
-    public LinealScale( double min, double max ){
+    public LinearScale( double min, double max ){
         super( min, max );
         inverse = null;
     }
 
 
-    public LinealScale( double originalMin, double originalMax,
+    public LinearScale( double originalMin, double originalMax,
                          double targetMin, double targetMax ){
         super( originalMin, originalMax );
-        inverse = new LinealScale01(targetMin, targetMax);
+        inverse = new LinearScale01(targetMin, targetMax);
     }
 
     @Override
