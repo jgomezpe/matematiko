@@ -4,7 +4,7 @@
  */
 package nsgl.real;
 
-import nsgl.real.array.sort.Merge;
+import nsgl.generic.array.sort.Merge;
 
 /**
  *
@@ -53,7 +53,7 @@ public class StatisticsWithMedian extends Statistics{
     
     private void compute_median( double[] x){
     	Merge merge = new Merge(new L2HOrder());
-    	x = merge.apply(x.clone());
+    	x = (double[])merge.apply(x.clone());
         int n = x.length;
         median = ((n%2)==0)?(x[n/2]+x[n/2-1])/2.0:x[n/2];
     }

@@ -1,7 +1,7 @@
 package nsgl.real.pick;
 
 import nsgl.integer.Order;
-import nsgl.integer.array.Sorted;
+import nsgl.generic.array.Sorted;
 import nsgl.integer.random.Roulette;
 
 public class Elitism implements Pick{
@@ -66,7 +66,7 @@ public class Elitism implements Pick{
 	  public int[] apply( int n, double[] q ){
 	      int[] sel = new int[n];
 	      int s = q.length;
-	      Sorted indexq = new Sorted(new IndexQOrder(q));
+	      Sorted<Integer> indexq = new Sorted<Integer>(new IndexQOrder(q));
 	      for( int i=0; i<s; i++ ){
 	          indexq.add(i);
 	      }

@@ -1,7 +1,7 @@
 package nsgl.real.pick;
 
 import nsgl.integer.random.Uniform;
-import nsgl.integer.array.DynArray;
+import nsgl.generic.array.Vector;
 
 public class Tournament extends UniformPick{
 	  /**
@@ -42,7 +42,7 @@ public class Tournament extends UniformPick{
 	  @Override
 	  protected int choose_one( Uniform g, double[] q ){
 	    double[] candidates = new double[m];
-	    DynArray indices = new DynArray();
+	    Vector<Integer> indices = new Vector<Integer>();
 	    for( int i=0; i<m; i++ ){
 	        indices.add(g.next());
 	        candidates[i] = q[indices.get(i)];
