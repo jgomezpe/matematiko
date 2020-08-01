@@ -1,7 +1,6 @@
 package nsgl.real.matrix;
 import nsgl.algebra.linear.LinearSpace;
 import nsgl.copy.Copyable;
-import nsgl.real.matrix.Matrix;
 
 /**
  * <p>Title: DoubleMatrixVectorSpace</p>

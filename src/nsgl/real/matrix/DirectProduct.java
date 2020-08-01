@@ -1,7 +1,7 @@
 package nsgl.real.matrix;
 import nsgl.copy.Copyable;
 import nsgl.algebra.*;
-import nsgl.real.matrix.Matrix;
+
 /**
  * <p>Title: MatrixDirectProduct</p>
  * <p>Description: Multiplies or divides two matrices,

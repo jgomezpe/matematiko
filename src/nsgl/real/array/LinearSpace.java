@@ -1,7 +1,5 @@
 package nsgl.real.array;
 
-import nsgl.real.array.Util;
-
 /**
  * <p>Title: VectorAddition</p>
  * <p>Description: Adds and substracts vectors.</p>
