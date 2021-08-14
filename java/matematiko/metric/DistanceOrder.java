@@ -1,12 +1,13 @@
 package matematiko.metric;
 
+import kompari.Order;
+import kompari.real.DoubleOrder;
 import kompari.real.L2HOrder;
-import kompari.real.Order;
 
-public class DistanceOrder<T> implements kompari.Order{
+public class DistanceOrder<T> implements Order<T>{
 	protected Distance<T> distance;
 	protected T point;
-	protected Order order;
+	protected DoubleOrder order;
 	
 	public DistanceOrder( Distance<T> distance, T point ){
 		this.distance = distance;
@@ -14,7 +15,6 @@ public class DistanceOrder<T> implements kompari.Order{
 		this.order = new L2HOrder();
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
-	public int compare(Object x, Object y){ return ((Double)distance.apply((T)x,point)).compareTo(distance.apply((T)y,point)); }
+	public int compare(T x, T y){ return order.compare(distance.apply(x,point),distance.apply(y,point)); }
 }

@@ -53,8 +53,9 @@ public class StatisticsWithMedian extends Statistics{
     }
     
     private void compute_median( double[] x){
-    	Merge merge = new Merge(new L2HOrder());
-    	x = (double[])merge.apply(x.clone());
+    	Merge<Double> merge = new Merge<Double>(new L2HOrder());
+    	x = x.clone();
+    	merge.apply(x);
         int n = x.length;
         median = ((n%2)==0)?(x[n/2]+x[n/2-1])/2.0:x[n/2];
     }

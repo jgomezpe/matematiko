@@ -1,45 +1,37 @@
 package matematiko.statistics;
 
-import java.util.Iterator;
-
-import kompari.Order;
-import speco.array.Sorted;
-import speco.pair.Pair;
-import speco.pair.PairAOrder;
-
+import java.util.TreeMap;
 
 public class Histogram<K> {
-	protected Sorted<Pair<K, Integer>> array;
+    protected TreeMap<K, Integer> map = new TreeMap<K, Integer>();
 		
-	public Histogram( Order order ){
-		array = new Sorted<Pair<K, Integer>>(new PairAOrder<K,Integer>(order));
+    public Histogram(){}
+	
+    public void add( K key, int amount ){
+	Integer current = map.get(key);
+	current = current!=null?current+amount:amount;
+	map.put(key, current);
+    }
+	
+    public void inc( K key ){ add( key, 1 ); }
+	
+    public void dec( K key ){ add( key, -1 ); }
+	
+    public K mode(){
+	K m = null;
+	int min=Integer.MIN_VALUE;
+	int v;
+	for(K key:map.keySet()) {
+	    v = map.get(key);
+	    if(v>min) {
+		min = v;
+		m = key;
+	    }	 
 	}
+	return m;
+    }
 	
-	public void add( K key, int amount ){
-		Pair<K, Integer> pair = new Pair<K, Integer>(key, amount);
-		try{
-			Integer index = array.find(pair);
-			pair = array.get(index);
-			pair.b( pair.b()+amount );
-		}catch(Exception e){ array.add(pair); }
-	}
+    public void clear(){ map.clear(); }
 	
-	public void inc( K key ){ add( key, 1 ); }
-	
-	public K mode(){
-		try{
-			int m = 0;
-			for( int i=1; i<array.size(); i++ )
-				if( array.get(i).b() > array.get(m).b() ) m=i;
-			return array.get(m).a();
-		}catch(Exception e){ return null; }
-	}
-	
-	public String toString(){
-		return array.toString();
-	}
-	
-	public void clear(){ array.clear(); }
-	
-	public Iterator<K> keys(){ return new HistogramKeys<K>(this); }	
+    public Iterable<K> keys(){ return map.keySet(); }	
 }
