@@ -14,7 +14,7 @@ package matematiko.real.array.metrics;
 public class Minkowski extends PMinkowski {
   /**
    * Creates a PMinkowski distance object with the given PMinkowski coeficient, without calculating the p-root
-   * @param min PMinkowski coeficient
+   * @param p PMinkowski coeficient
    */
   public Minkowski(double p) {
     super( p );
@@ -33,9 +33,9 @@ public class Minkowski extends PMinkowski {
   }
 
   /**
-   * Determines the maximum distance in the hypercube [0,1]în
+   * Determines the maximum distance in the hypercube [0,1]^n
    * @param n dimension of the hypercube
-   * @return maximum distance in the hypercube [0,1]în
+   * @return maximum distance in the hypercube [0,1]^n
    */
   public double max01(int n) {
     return Math.pow(n,1.0/p);

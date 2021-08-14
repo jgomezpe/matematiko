@@ -45,6 +45,7 @@ public class Matrix {
     /**
      * Constructor: Create a new matrix with the same dimensions and components as the given matrix
      * @param A The source matrix
+     * @return A clone of the given matrix
      */
     public static double[][] clone(double[][] A) {
         double[][] data = null;
@@ -143,16 +144,18 @@ public class Matrix {
     /**
      * Transpose the matrix (rows becomes columns, columns become rows)
      * @param A Matrix to be transposed
+     * @return The transpose version of the given matrix
      */
     public static double[][] transpose(double[][] A) {
         return transpose(A, rows(A), columns(A));
     }
 
     /**
-     * Transpose the matrix (rows becomes columns, columns become rows)
-     * @param A Matrix to be transposed
-     * @param n Number of rows of the matrix
-     * @param m Number of columns of the matrix
+     * Transposes a portion of a matrix (rows becomes columns, columns become rows)
+     * @param A Matrix to transpose
+     * @param n Number of rows to transpose
+     * @param m Number of columns to transpose
+     * @return A transpose version of the submatrix A[0..n-1][ 0,..,m-1]
      */
     public static double[][] transpose(double[][] A, int n, int m) {
         double[][] At = new double[m][n];
@@ -166,7 +169,7 @@ public class Matrix {
 
     /**
      * Calculates the sum of the elements in the given row
-     * @param A Matrix to be analized
+     * @param A Matrix to be analyzed
      * @param i The row index to be added
      * @return The sum of the elements in the given row. Return 0 if the index is not valid
      */
@@ -176,7 +179,7 @@ public class Matrix {
 
     /**
      * Calculates the sum of the elements in the given row
-     * @param A Matrix to be analized
+     * @param A Matrix to be analyzed
      * @param n Number of rows of the matrix
      * @param m Number of columns of the matrix
      * @param i The row index to be added
@@ -222,7 +225,7 @@ public class Matrix {
 
     /**
      * Calculates the sum of the elements in the matrix
-     * @param A Matrix to be analized
+     * @param A Matrix to be analyzed
      * @return The sum of the elements in the matrix
      */
     public static double sum(double[][] A) {
@@ -231,7 +234,7 @@ public class Matrix {
 
     /**
      * Calculates the sum of the elements in the matrix
-     * @param A Matrix to be analized
+     * @param A Matrix to be analyzed
      * @param n Number of rows of the matrix
      * @param m Number of columns of the matrix
      * @return The sum of the elements in the matrix
@@ -259,7 +262,7 @@ public class Matrix {
     /**
      * Calculates the sum of the elements in the principal diagonal, i.e.
      * sum( x[i,i] ) for all i=1..n
-     * @param A Matrix to be analized
+     * @param A Matrix to be analyzed
      * @param n Number of rows of the matrix
      * @param m Number of columns of the matrix
      * @return The sum of the elements in the principal diagonal
@@ -275,7 +278,7 @@ public class Matrix {
 
     /**
      * Determines if the matrix is squared or not
-     * @param A Matrix to be analized
+     * @param A Matrix to be analyzed
      * @return true if the matrix is squared false otherwise
      */
     public static boolean isSquare(double[][] A) {
@@ -284,7 +287,7 @@ public class Matrix {
 
     /**
      * Determines if the matrix is squared or not
-     * @param A Matrix to be analized
+     * @param A Matrix to be analyzed
      * @param n Number of rows of the matrix
      * @param m Number of columns of the matrix
      * @return true if the matrix is squared false otherwise
@@ -295,7 +298,7 @@ public class Matrix {
 
     /**
      * Determines if the matrix is symmetric
-     * @param A Matrix to be analized
+     * @param A Matrix to be analyzed
      * @return true if the matrix is symmetric, false otherwise
      */
     public static boolean isSymmetric(double[][] A) {
@@ -304,7 +307,7 @@ public class Matrix {
 
     /**
      * Determines if the matrix is symmetric
-     * @param A Matrix to be analized
+     * @param A Matrix to be analyzed
      * @param n Number of rows of the matrix
      * @param m Number of columns of the matrix
      * @return true if the matrix is symmetric, false otherwise
@@ -323,7 +326,7 @@ public class Matrix {
 
     /**
      * Determines if the matrix is diagonal
-     * @param A Matrix to be analized
+     * @param A Matrix to be analyzed
      * @return true if the matrix is diagonal, false otherwise
      */
     public static boolean isDiagonal(double[][] A) {
@@ -332,7 +335,7 @@ public class Matrix {
 
     /**
      * Determines if the matrix is diagonal
-     * @param A Matrix to be analized
+     * @param A Matrix to be analyzed
      * @param n Number of rows of the matrix
      * @param m Number of columns of the matrix
      * @return true if the matrix is diagonal, false otherwise
@@ -350,10 +353,11 @@ public class Matrix {
     }
 
     /**
-     * Obtains statistical (min, max, avg, standard deviation) information from a matrix by considering each column as
+     * Obtains statistical (minimum, maximum, average, standard deviation) information from a matrix by considering each column as
      * an independent variable
      * @param x Matrix to be statistically analyzed
-     * @return statistical (min, max, avg, standard deviation) information from a matrix by considering each column as
+     * @param include_median If the computed statistical values should include the median. Set to<i>true</i> if should include median, <i>false</i> otherwise.
+     * @return statistical (minimum, maximum, average, standard deviation) information from a matrix by considering each column as
      * an independent variable
      */
     public static Statistics[] statistics(double[][] x, boolean include_median) {
@@ -370,10 +374,11 @@ public class Matrix {
     }
 
     /**
-     * Obtains statistical (min, max, avg, standard deviation) information from a matrix by considering each column as
+     * Obtains statistical (minimum, maximum, average, standard deviation) information from a matrix by considering each column as
      * an independent variable
      * @param x Matrix to be statistically analyzed
-     * @return statistical (min, max, avg, standard deviation) information from a matrix by considering each column as
+     * @param include_median If the computed statistical values should include the median. Set to<i>true</i> if should include median, <i>false</i> otherwise.
+     * @return statistical (minimum, maximum, average, standard deviation) information from a matrix by considering each column as
      * an independent variable
      */
     public static double[][] statistics_matrix(double[][] x, boolean include_median) {

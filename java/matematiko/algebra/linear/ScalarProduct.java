@@ -17,13 +17,15 @@ public interface ScalarProduct<T> {
      * Multiplies object one and the scalar x
      * @param one The object
      * @param x The scalar
+     * @return The resulting object of multiplying the given object by scalar x
      */
     T fastMultiply(T one, double x);
 
     /**
-     * Divide object one by the scalar x
+     * Divides object one by the scalar x
      * @param one The object
      * @param x The scalar
+     * @return The resulting object of dividing the given object by scalar x
      */
     default T fastDivide(T one, double x) { return fastMultiply(one, 1.0/x); }
 
@@ -31,7 +33,7 @@ public interface ScalarProduct<T> {
      * Multiplies object one copy and the scalar x
      * @param one The object
      * @param x The scalar
-     * @return The result
+     * @return The resulting object of multiplying the given object by scalar x
      */
     @SuppressWarnings("unchecked")
 	default T multiply(T one, double x){ return fastMultiply((T)Copier.apply(one), x); }
@@ -40,7 +42,7 @@ public interface ScalarProduct<T> {
      * Divide object one copy by the scalar x
      * @param one The object
      * @param x The scalar
-     * @return The result
+     * @return The resulting object of dividing the given object by scalar x
      */
     @SuppressWarnings("unchecked")
 	default T divide(T one, double x){ return fastDivide((T)Copier.apply(one), x); }    

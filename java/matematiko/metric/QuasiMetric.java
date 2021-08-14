@@ -3,10 +3,10 @@ package matematiko.metric;
 /**
  * <p>Title: QuasiMetric</p>
  * <p>Description: Represents a quasimetric. A quasimetric satisfies the following conditions:</p>
- * <p>d(x,y) >= 0</p>
+ * <p>d(x,y) &gt;= 0</p>
  * <p>d(x,x) = 0</p>
- * <p>d(x,y)=0 -> x = y</p>
- * <p>d(x,z) <= d(x,y) + d(y,z)</p>
+ * <p>d(x,y)=0 -&gt; x = y</p>
+ * <p>d(x,z) &lt;= d(x,y) + d(y,z)</p>
  * <p>if it satisfies d(x,y) = d(y,x) then it is called metric</p>
  * <p>Copyright:    Copyright (c) 2006</p>
  * <p>Company: Universidad Nacional de Colombia</p>
