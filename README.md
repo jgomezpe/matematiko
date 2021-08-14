@@ -4,6 +4,11 @@ A set of mathematical concepts and functions for the numtseng infrastructure. It
 <h3>Copyright (c)</h3>
 &nbsp;Author: <A HREF="https://disi.unal.edu.co/~jgomezpe/"> Jonatan Gomez-Perdomo </A>
 &nbsp;E-mail: <A HREF="mailto:jgomezpe@unal.edu.co">jgomezpe@unal.edu.co</A>
+&nbsp;Requires:
+
+&nbsp;kerno.jar, speco.jar, and kompari.jar
+
+&nbsp;Available at <A HREF="https://github.com/jgomezpe/libs/">https://github.com/jgomezpe/libs/</A>
 
 &nbsp;Ready to use: <A HREF="https://github.com/jgomezpe/libs/matematiko.jar">https://github.com/jgomezpe/libs/matematiko.jar</A>
 
