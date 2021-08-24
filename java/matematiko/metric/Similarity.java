@@ -36,57 +36,21 @@
  * (E-mail: <A HREF="mailto:jgomezpe@unal.edu.co">jgomezpe@unal.edu.co</A> )
  * @version 1.0
  */
-package matematiko.real;
-
-import matematiko.scale.ReversableScale;
+package matematiko.metric;
 
 /**
- * <p>Title: LinearScale01</p>
- *
- * <p>Description: A linear scaling process to the [0,1] interval for the [min,max] interval</p>
- *
+ * <p>Title: Similarity</p>
+ * <p>Description: Represents a similarity measure. A similarity measure satisfies the following conditions:</p>
+ * <p>d(x,y) &gt;= 0</p>
+ * <p>d(x,x) = 0</p>
+ * <p>d(x,y)=0 -&gt; x = y</p>
+ * @param <T>: Type of elements the similarity measure is computed on
  */
-public class LinearScale01 implements ReversableScale<Double>{
-	protected double min;
-	protected double length;
-    
+public interface Similarity<T> extends QuasiMetric<T> {
 	/**
-	 * Creates a [0,1] linear scale considering the given maximum and minimum values 
-	 * @param min Minimum value goes to 0
-	 * @param max Maximum value goes to 1
+	 * Gets the maximum similarity value
+	 * @param x Example of the measured space for parameter setting (for example dimension of identity array)
+	 * @return Maximum similarity value
 	 */
-	public LinearScale01( double min, double max ){
-		this.min = min;
-		length = max - min;
-	}
-  
-	/**
-	 * Scales a real
-	 * @param x Real to scale
-	 * @return Scaled real
-	 */
-	public double apply( double x ){ return (x-min)/length; }
-    
-	/**
-	 * Reverses the scaling process 
-	 * @param x Real to be unscaled
-	 * @return Unscaled version of <i>x</i>
-	 */
-	public double reverse( double x ){ return min + length*x; }
-
-	/**
-	 * Scales a real
-	 * @param x Real to scale
-	 * @return Scaled real
-	 */
-	@Override
-	public Double fastApply( Double x ){ return apply((double)x); }
-
-	/**
-	 * Reverses the scaling process 
-	 * @param x Real to be unscaled
-	 * @return Unscaled version of <i>x</i>
-	 */
-	@Override
-	public Double fastReverse( Double x ){ return reverse((double)x); }    
+	public double max( T x );    
 }

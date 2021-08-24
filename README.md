@@ -15,7 +15,7 @@ A set of mathematical concepts and functions for the numtseng infrastructure. It
 &nbsp;Source code: <A HREF="https://github.com/jgomezpe/matematiko/">https://github.com/jgomezpe/matematiko/</A>
 
 
-&nbsp;API documentation: <A HREF="https://numtseng.com/api/matematiko/">https://numtseng.com/api/matematiko/</A>
+&nbsp;API documentation: <A HREF="https://numtseng.com/api/java/matematiko/">https://numtseng.com/api/java/matematiko/</A>
 
 &nbsp;All rights reserved.
 

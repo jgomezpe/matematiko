@@ -36,57 +36,52 @@
  * (E-mail: <A HREF="mailto:jgomezpe@unal.edu.co">jgomezpe@unal.edu.co</A> )
  * @version 1.0
  */
-package matematiko.real;
+package matematiko.scale;
 
-import matematiko.scale.ReversableScale;
+import speco.array.Array;
+import kopii.Copier;
 
 /**
- * <p>Title: LinearScale01</p>
+ * <p>Title: ReversableScale</p>
  *
- * <p>Description: A linear scaling process to the [0,1] interval for the [min,max] interval</p>
+ * <p>Description: Scale process that can be reversed</p>
  *
  */
-public class LinearScale01 implements ReversableScale<Double>{
-	protected double min;
-	protected double length;
-    
+public interface ReversableScale<T> extends Scale<T>{
 	/**
-	 * Creates a [0,1] linear scale considering the given maximum and minimum values 
-	 * @param min Minimum value goes to 0
-	 * @param max Maximum value goes to 1
+	 * Reverses the scaling process (may return the result in the same object) 
+	 * @param x Object to be unscaled
+	 * @return Unscaled version of <i>x</i>
 	 */
-	public LinearScale01( double min, double max ){
-		this.min = min;
-		length = max - min;
-	}
-  
-	/**
-	 * Scales a real
-	 * @param x Real to scale
-	 * @return Scaled real
-	 */
-	public double apply( double x ){ return (x-min)/length; }
+	public T fastReverse( T x );
     
 	/**
 	 * Reverses the scaling process 
-	 * @param x Real to be unscaled
+	 * @param x Object to be unscaled
 	 * @return Unscaled version of <i>x</i>
 	 */
-	public double reverse( double x ){ return min + length*x; }
-
+	@SuppressWarnings("unchecked")
+	default T reverse( T x ){ return fastReverse((T)Copier.apply(x)); }
+    
 	/**
-	 * Scales a real
-	 * @param x Real to scale
-	 * @return Scaled real
+	 * Unscales an array of objects
+	 * @param a Objects to scale
+	 * @return Unscaled objects
 	 */
-	@Override
-	public Double fastApply( Double x ){ return apply((double)x); }
-
+	@SuppressWarnings("unchecked")
+	default Array<T> reverseArray( Array<T> a ){
+		a = (Array<T>)a.copy();
+		for( int i=0; i<a.size(); i++ ) a.set(i, reverse(a.get(i)));
+		return a;
+	} 
+    
 	/**
-	 * Reverses the scaling process 
-	 * @param x Real to be unscaled
-	 * @return Unscaled version of <i>x</i>
+	 * Unscales an array of objects (return the same array)
+	 * @param a Objects to scale
+	 * @return Unscaled objects
 	 */
-	@Override
-	public Double fastReverse( Double x ){ return reverse((double)x); }    
+	default Array<T> fastReverseArray( Array<T> a ){
+		for( int i=0; i<a.size(); i++ ) a.set(i, fastReverse(a.get(i)));
+		return a;
+	}    
 }

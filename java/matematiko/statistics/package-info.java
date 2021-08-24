@@ -1,4 +1,6 @@
 /**
+ * <p>Statistics classes and methods.</p>
+ *
  * <p>Copyright: Copyright (c) 2019</p>
  *
  * <h3>License</h3>
@@ -36,57 +38,4 @@
  * (E-mail: <A HREF="mailto:jgomezpe@unal.edu.co">jgomezpe@unal.edu.co</A> )
  * @version 1.0
  */
-package matematiko.real;
-
-import matematiko.scale.ReversableScale;
-
-/**
- * <p>Title: LinearScale01</p>
- *
- * <p>Description: A linear scaling process to the [0,1] interval for the [min,max] interval</p>
- *
- */
-public class LinearScale01 implements ReversableScale<Double>{
-	protected double min;
-	protected double length;
-    
-	/**
-	 * Creates a [0,1] linear scale considering the given maximum and minimum values 
-	 * @param min Minimum value goes to 0
-	 * @param max Maximum value goes to 1
-	 */
-	public LinearScale01( double min, double max ){
-		this.min = min;
-		length = max - min;
-	}
-  
-	/**
-	 * Scales a real
-	 * @param x Real to scale
-	 * @return Scaled real
-	 */
-	public double apply( double x ){ return (x-min)/length; }
-    
-	/**
-	 * Reverses the scaling process 
-	 * @param x Real to be unscaled
-	 * @return Unscaled version of <i>x</i>
-	 */
-	public double reverse( double x ){ return min + length*x; }
-
-	/**
-	 * Scales a real
-	 * @param x Real to scale
-	 * @return Scaled real
-	 */
-	@Override
-	public Double fastApply( Double x ){ return apply((double)x); }
-
-	/**
-	 * Reverses the scaling process 
-	 * @param x Real to be unscaled
-	 * @return Unscaled version of <i>x</i>
-	 */
-	@Override
-	public Double fastReverse( Double x ){ return reverse((double)x); }    
-}
+package matematiko.statistics;

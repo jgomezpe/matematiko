@@ -36,47 +36,15 @@
  * (E-mail: <A HREF="mailto:jgomezpe@unal.edu.co">jgomezpe@unal.edu.co</A> )
  * @version 1.0
  */
-package matematiko.algebra.linear;
-
-import kopii.Copier;
+package matematiko.real.metrics;
 
 /**
- * <p>Title: ScalarProduct</p>
- * <p>Description: Abstract class, multiplies and divide one object for one scalar.</p>
- * @param <T>: Type of the scalar product objects
+ * <p>Title: Euclidean</p>
+ * <p>Description: Calculates the Euclidean distance between two real vectors</p>
  */
-public interface ScalarProduct<T> {
+public class Euclidean extends Minkowski {
 	/**
-	 * Multiplies object x and the scalar k (may return the result in object <i>x</i>)
-	 * @param x The object
-	 * @param k The scalar
-	 * @return <i>k*x</i>
+	 * Creates an Euclidean distance object
 	 */
-	T fastMultiply(T x, double k);
-
-	/**
-	 * Divides object x by the scalar k (may return the result in object <i>x</i>)
-	 * @param x The object
-	 * @param k The scalar
-	 * @return <i>(1/k)*x</i>
-	 */
-	default T fastDivide(T x, double k) { return fastMultiply(x, 1.0/k); }
-
-	/**
-	 * Multiplies object x and the scalar k 
-	 * @param x The object
-	 * @param k The scalar
-	 * @return <i>k*x</i>
-	 */
-	@SuppressWarnings("unchecked")
-	default T multiply(T x, double k){ return fastMultiply((T)Copier.apply(x), k); }
-
-	/**
-	 * Divides object x by the scalar k (may return the result in object <i>x</i>)
-	 * @param x The object
-	 * @param k The scalar
-	 * @return <i>(1/k)*x</i>
-	 */
-	@SuppressWarnings("unchecked")
-	default T divide(T x, double k){ return fastDivide((T)Copier.apply(x), k); }    
+	public Euclidean() { super(2.0); }
 }

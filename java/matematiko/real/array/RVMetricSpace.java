@@ -36,57 +36,32 @@
  * (E-mail: <A HREF="mailto:jgomezpe@unal.edu.co">jgomezpe@unal.edu.co</A> )
  * @version 1.0
  */
-package matematiko.real;
+package matematiko.real.array;
 
-import matematiko.scale.ReversableScale;
+import matematiko.metric.MetricLinearSpace;
+import matematiko.metric.QuasiMetric;
 
 /**
- * <p>Title: LinearScale01</p>
+ * <p>Title: RVMetricSpace </p>
  *
- * <p>Description: A linear scaling process to the [0,1] interval for the [min,max] interval</p>
+ * <p>Description: Real vector metric space</p>
  *
  */
-public class LinearScale01 implements ReversableScale<Double>{
-	protected double min;
-	protected double length;
-    
+public class RVMetricSpace extends RVLinearSpace implements MetricLinearSpace<double[]> {
+	protected QuasiMetric<double[]> metric;
+ 
 	/**
-	 * Creates a [0,1] linear scale considering the given maximum and minimum values 
-	 * @param min Minimum value goes to 0
-	 * @param max Maximum value goes to 1
+	 * Creates a real vector space with the given quasi-metric
+	 * @param metric Quasi-metric used by the space
 	 */
-	public LinearScale01( double min, double max ){
-		this.min = min;
-		length = max - min;
-	}
-  
+	public RVMetricSpace( QuasiMetric<double[]> metric ){ this.metric = metric; }
+	
 	/**
-	 * Scales a real
-	 * @param x Real to scale
-	 * @return Scaled real
-	 */
-	public double apply( double x ){ return (x-min)/length; }
-    
-	/**
-	 * Reverses the scaling process 
-	 * @param x Real to be unscaled
-	 * @return Unscaled version of <i>x</i>
-	 */
-	public double reverse( double x ){ return min + length*x; }
-
-	/**
-	 * Scales a real
-	 * @param x Real to scale
-	 * @return Scaled real
+	 * Calculates the quasi-metric from one object to another. 
+	 * @param x The first object
+	 * @param y The second object
+	 * @return Quasi-metric from object x to object y
 	 */
 	@Override
-	public Double fastApply( Double x ){ return apply((double)x); }
-
-	/**
-	 * Reverses the scaling process 
-	 * @param x Real to be unscaled
-	 * @return Unscaled version of <i>x</i>
-	 */
-	@Override
-	public Double fastReverse( Double x ){ return reverse((double)x); }    
+	public double apply(double[] x, double[] y) { return metric.apply(x, y); }    
 }

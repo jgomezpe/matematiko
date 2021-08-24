@@ -36,47 +36,36 @@
  * (E-mail: <A HREF="mailto:jgomezpe@unal.edu.co">jgomezpe@unal.edu.co</A> )
  * @version 1.0
  */
-package matematiko.algebra.linear;
+package matematiko.real.metrics;
 
-import kopii.Copier;
+
 
 /**
- * <p>Title: ScalarProduct</p>
- * <p>Description: Abstract class, multiplies and divide one object for one scalar.</p>
- * @param <T>: Type of the scalar product objects
+ * <p>Title: PMinkowski</p>
+ * <p>Description: Calculates the PMinkowski distance between two real vectors, without calculating the p-root</p>
  */
-public interface ScalarProduct<T> {
+public class Minkowski extends PMinkowski {
 	/**
-	 * Multiplies object x and the scalar k (may return the result in object <i>x</i>)
-	 * @param x The object
-	 * @param k The scalar
-	 * @return <i>k*x</i>
+	 * Creates a PMinkowski distance object with the given PMinkowski coefficient
+	 * @param p PMinkowski coefficient
 	 */
-	T fastMultiply(T x, double k);
+	public Minkowski(double p) { super( p ); }
 
 	/**
-	 * Divides object x by the scalar k (may return the result in object <i>x</i>)
-	 * @param x The object
-	 * @param k The scalar
-	 * @return <i>(1/k)*x</i>
+	 * Calculates the PMinkowski distance from one real vector to another.
+	 * @param x The first real vector
+	 * @param y The second real vector
+	 * @return PMinkowski distance
 	 */
-	default T fastDivide(T x, double k) { return fastMultiply(x, 1.0/k); }
+	@Override
+	public double apply(double[] x, double[] y) {
+		return Math.pow(super.apply(x,y), 1.0/p);
+	}
 
 	/**
-	 * Multiplies object x and the scalar k 
-	 * @param x The object
-	 * @param k The scalar
-	 * @return <i>k*x</i>
+	 * Determines the maximum distance in the hyper-cube [0,1]^n
+	 * @param n dimension of the hyper-cube
+	 * @return maximum distance in the hyper-cube [0,1]^n
 	 */
-	@SuppressWarnings("unchecked")
-	default T multiply(T x, double k){ return fastMultiply((T)Copier.apply(x), k); }
-
-	/**
-	 * Divides object x by the scalar k (may return the result in object <i>x</i>)
-	 * @param x The object
-	 * @param k The scalar
-	 * @return <i>(1/k)*x</i>
-	 */
-	@SuppressWarnings("unchecked")
-	default T divide(T x, double k){ return fastDivide((T)Copier.apply(x), k); }    
+	public double max01(int n) { return Math.pow(n,1.0/p); }
 }

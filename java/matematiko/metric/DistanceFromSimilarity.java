@@ -36,57 +36,30 @@
  * (E-mail: <A HREF="mailto:jgomezpe@unal.edu.co">jgomezpe@unal.edu.co</A> )
  * @version 1.0
  */
-package matematiko.real;
-
-import matematiko.scale.ReversableScale;
+package matematiko.metric;
 
 /**
- * <p>Title: LinearScale01</p>
+ * <p>Title: Distance from similarity</p>
  *
- * <p>Description: A linear scaling process to the [0,1] interval for the [min,max] interval</p>
+ * <p>Description: Defines a 'distance' from a similarity measure</p>
+ * @param <T>: Type of elements the distance is computed on
  *
  */
-public class LinearScale01 implements ReversableScale<Double>{
-	protected double min;
-	protected double length;
+public class DistanceFromSimilarity<T> implements Distance<T> {
+	protected Similarity<T> sim;
     
 	/**
-	 * Creates a [0,1] linear scale considering the given maximum and minimum values 
-	 * @param min Minimum value goes to 0
-	 * @param max Maximum value goes to 1
+	 * Defines a 'distance' from a similarity measure
+	 * @param sim Similarity measure
 	 */
-	public LinearScale01( double min, double max ){
-		this.min = min;
-		length = max - min;
-	}
-  
-	/**
-	 * Scales a real
-	 * @param x Real to scale
-	 * @return Scaled real
-	 */
-	public double apply( double x ){ return (x-min)/length; }
-    
-	/**
-	 * Reverses the scaling process 
-	 * @param x Real to be unscaled
-	 * @return Unscaled version of <i>x</i>
-	 */
-	public double reverse( double x ){ return min + length*x; }
+	public DistanceFromSimilarity( Similarity<T> sim ){ this.sim = sim; }
 
 	/**
-	 * Scales a real
-	 * @param x Real to scale
-	 * @return Scaled real
+	 * Calculates the distance from one object to another. 	 
+	 * @param x The first object
+	 * @param y The second object
+	 * @return 'Distance' from object x to object y
 	 */
 	@Override
-	public Double fastApply( Double x ){ return apply((double)x); }
-
-	/**
-	 * Reverses the scaling process 
-	 * @param x Real to be unscaled
-	 * @return Unscaled version of <i>x</i>
-	 */
-	@Override
-	public Double fastReverse( Double x ){ return reverse((double)x); }    
+	public double apply(T x, T y) { return sim.max(x) - sim.apply(x, y); }   
 }

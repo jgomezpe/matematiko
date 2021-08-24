@@ -36,57 +36,17 @@
  * (E-mail: <A HREF="mailto:jgomezpe@unal.edu.co">jgomezpe@unal.edu.co</A> )
  * @version 1.0
  */
-package matematiko.real;
-
-import matematiko.scale.ReversableScale;
+package matematiko.real.metrics;
 
 /**
- * <p>Title: LinearScale01</p>
+ * <p>Title: SqrEuclidean</p>
  *
- * <p>Description: A linear scaling process to the [0,1] interval for the [min,max] interval</p>
+ * <p>Description: Calculates the square Euclidean distance between two real vectors</p>
  *
  */
-public class LinearScale01 implements ReversableScale<Double>{
-	protected double min;
-	protected double length;
-    
+public class SqrEuclidean extends PMinkowski{
 	/**
-	 * Creates a [0,1] linear scale considering the given maximum and minimum values 
-	 * @param min Minimum value goes to 0
-	 * @param max Maximum value goes to 1
+	 * Creates a square Euclidean distance between two real vectors
 	 */
-	public LinearScale01( double min, double max ){
-		this.min = min;
-		length = max - min;
-	}
-  
-	/**
-	 * Scales a real
-	 * @param x Real to scale
-	 * @return Scaled real
-	 */
-	public double apply( double x ){ return (x-min)/length; }
-    
-	/**
-	 * Reverses the scaling process 
-	 * @param x Real to be unscaled
-	 * @return Unscaled version of <i>x</i>
-	 */
-	public double reverse( double x ){ return min + length*x; }
-
-	/**
-	 * Scales a real
-	 * @param x Real to scale
-	 * @return Scaled real
-	 */
-	@Override
-	public Double fastApply( Double x ){ return apply((double)x); }
-
-	/**
-	 * Reverses the scaling process 
-	 * @param x Real to be unscaled
-	 * @return Unscaled version of <i>x</i>
-	 */
-	@Override
-	public Double fastReverse( Double x ){ return reverse((double)x); }    
+	public SqrEuclidean(){ super(2.0); }
 }

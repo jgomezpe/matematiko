@@ -36,47 +36,45 @@
  * (E-mail: <A HREF="mailto:jgomezpe@unal.edu.co">jgomezpe@unal.edu.co</A> )
  * @version 1.0
  */
-package matematiko.algebra.linear;
+package matematiko.real.metrics;
 
-import kopii.Copier;
+import matematiko.metric.*;
 
 /**
- * <p>Title: ScalarProduct</p>
- * <p>Description: Abstract class, multiplies and divide one object for one scalar.</p>
- * @param <T>: Type of the scalar product objects
+ * <p>Title: PMinkowski</p>
+ * <p>Description: Calculates the PMinkowski distance between two real vectors,
+ * <p>without calculating the p-root</p>
  */
-public interface ScalarProduct<T> {
+public class PMinkowski implements Distance<double[]> {
 	/**
-	 * Multiplies object x and the scalar k (may return the result in object <i>x</i>)
-	 * @param x The object
-	 * @param k The scalar
-	 * @return <i>k*x</i>
+	 * The PMinkowski coefficient
 	 */
-	T fastMultiply(T x, double k);
+	protected double p;
 
 	/**
-	 * Divides object x by the scalar k (may return the result in object <i>x</i>)
-	 * @param x The object
-	 * @param k The scalar
-	 * @return <i>(1/k)*x</i>
+	 * Creates a PMinkowski distance object with the given PMinkowski coefficient, without calculating the p-root
+	 * @param p PMinkowski coefficient
 	 */
-	default T fastDivide(T x, double k) { return fastMultiply(x, 1.0/k); }
+	public PMinkowski(double p) { this.p = p; }
 
 	/**
-	 * Multiplies object x and the scalar k 
-	 * @param x The object
-	 * @param k The scalar
-	 * @return <i>k*x</i>
+	 * Calculates the PMinkowski distance from one real vector to another.
+	 * This object does not calculate the p-root
+	 * @param x The first real vector
+	 * @param y The second real vector
+	 * @return PMinkowski distance (without calculating the p-root from object x to object y
 	 */
-	@SuppressWarnings("unchecked")
-	default T multiply(T x, double k){ return fastMultiply((T)Copier.apply(x), k); }
+	public double apply(double[] x, double[] y) {
+		double s = 0.0;
+		int n = x.length;
+		for (int i = 0; i < n; i++)  s += Math.pow(Math.abs(x[i] - y[i]), p);
+		return s;
+	}
+  
 
 	/**
-	 * Divides object x by the scalar k (may return the result in object <i>x</i>)
-	 * @param x The object
-	 * @param k The scalar
-	 * @return <i>(1/k)*x</i>
+	 * Returns the PMinkowski coefficient
+	 * @return The PMinkowski coefficient
 	 */
-	@SuppressWarnings("unchecked")
-	default T divide(T x, double k){ return fastDivide((T)Copier.apply(x), k); }    
+	public double coeficient() { return p; } 
 }
