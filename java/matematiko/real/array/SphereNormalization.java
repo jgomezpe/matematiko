@@ -41,9 +41,7 @@ package matematiko.real.array;
 import matematiko.scale.Scale;
 
 /**
- * <p>Title: SphereNormalization</p>
- *
- * <p>Description: Normalization on the surface of an hyper-sphere </p>
+ * <p>Normalization on the surface of an hyper-sphere </p>
  *
  */
 public class SphereNormalization implements Scale<double[]>{

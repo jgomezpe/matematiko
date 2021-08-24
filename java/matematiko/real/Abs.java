@@ -41,9 +41,7 @@ package matematiko.real;
 import matematiko.metric.Distance;
 
 /**
- * <p>Title: Abs</p>
- *
- * <p>Description: Absolute value between reals defined as a distance </p>
+ * <p>Absolute value between reals defined as a distance </p>
  *
  */
 public class Abs implements Distance<Double>{

@@ -42,8 +42,7 @@ import matematiko.algebra.linear.LinearSpace;
 import speco.real.RealUtil;
 
 /**
- * <p>Title: RVLinearSpace</p>
- * <p>Description: Linear space of real vectors.</p>
+ * <p>Linear space of real vectors.</p>
  *
  */
 public class RVLinearSpace implements LinearSpace<double[]> {

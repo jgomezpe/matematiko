@@ -41,8 +41,7 @@ import kopii.Copier;
 import matematiko.algebra.*;
 
 /**
- * <p>Title: RMDirectProduct</p>
- * <p>Description: Real matrix direct product.</p>
+ * <p>Real matrix direct product.</p>
  *
  */
 public class RMDirectProduct implements Group<double[][]> {

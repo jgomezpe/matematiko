@@ -42,9 +42,7 @@ import matematiko.metric.MetricLinearSpace;
 import matematiko.metric.QuasiMetric;
 
 /**
- * <p>Title: RVMetricSpace </p>
- *
- * <p>Description: Real vector metric space</p>
+ * <p>Real vector metric space</p>
  *
  */
 public class RVMetricSpace extends RVLinearSpace implements MetricLinearSpace<double[]> {

@@ -42,9 +42,7 @@ import kopii.Copier;
 import speco.array.Array;
 
 /**
- * <p>Title: Scale</p>
- *
- * <p>Description: Abstract definition of object scaling</p>
+ * <p>Abstract definition of object scaling</p>
  * @param <T>: Type of objects to scale
  *
  */

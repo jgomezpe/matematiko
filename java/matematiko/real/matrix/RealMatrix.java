@@ -43,8 +43,7 @@ import matematiko.statistics.Statistics;
 import matematiko.statistics.StatisticsWithMedian;
 
 /**
- * <p>Title: RealMatrix</p>
- * <p>Description: A set of constants and methods operating on a matrix of double numbers.</p>
+ * <p>A set of constants and methods operating on a matrix of double numbers.</p>
  */
 public class RealMatrix {
 	/**

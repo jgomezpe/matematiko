@@ -44,9 +44,7 @@ import matematiko.scale.ReversableScale;
 
 
 /**
- * <p>Title: RVLinearScale</p>
- *
- * <p>Description: A linear scaling process for real vectors</p>
+ * <p>A linear scaling process for real vectors</p>
  *
  */
 public class RVLinearScale implements ReversableScale<double[]> {

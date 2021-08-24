@@ -40,9 +40,7 @@ package matematiko.algebra;
 
 
 /**
- * <p>Title: Monoid</p>
- *
- * <p>Description: Abstract definition of a Monoid</p>
+ * <p>Abstract definition of a Monoid</p>
  * @param <T>: Type of the monoid objects
  *
  */

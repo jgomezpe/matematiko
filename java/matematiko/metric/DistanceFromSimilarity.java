@@ -39,9 +39,7 @@
 package matematiko.metric;
 
 /**
- * <p>Title: Distance from similarity</p>
- *
- * <p>Description: Defines a 'distance' from a similarity measure</p>
+ * <p>Defines a 'distance' from a similarity measure</p>
  * @param <T>: Type of elements the distance is computed on
  *
  */

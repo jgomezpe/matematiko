@@ -41,8 +41,7 @@ package matematiko.algebra.linear;
 import kopii.Copier;
 
 /**
- * <p>Title: ScalarProduct</p>
- * <p>Description: Abstract class, multiplies and divide one object for one scalar.</p>
+ * <p>Abstract class, multiplies and divide one object for one scalar.</p>
  * @param <T>: Type of the scalar product objects
  */
 public interface ScalarProduct<T> {

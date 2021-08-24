@@ -39,9 +39,7 @@
 package matematiko.real.array;
 
 /**
- * <p>Title: DotProduct</p>
- *
- * <p>Description: Dot product of real vectors</p>
+ * <p>Dot product of real vectors</p>
  *
  */
 public class DotProduct {

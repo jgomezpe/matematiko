@@ -41,9 +41,7 @@ package matematiko.statistics;
 import java.util.TreeMap;
 
 /**
- * <p>Title: Histogram</p>
- *
- * <p>Description: A histogram of values</p>
+ * <p>A histogram of values</p>
  *
  */
 public class Histogram<K> {

@@ -42,9 +42,7 @@ import speco.array.Array;
 import kopii.Copier;
 
 /**
- * <p>Title: ReversableScale</p>
- *
- * <p>Description: Scale process that can be reversed</p>
+ * <p>Scale process that can be reversed</p>
  *
  */
 public interface ReversableScale<T> extends Scale<T>{

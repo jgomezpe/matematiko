@@ -42,9 +42,7 @@ import kompari.real.PrecisionOrder;
 import matematiko.real.matrix.RealMatrix;
 
 /**
- * <p>Title: GaussReduction</p>
- *
- * <p>Description: Solves (if possible) a linear system, using the Gauss Jordan reduction Method</p>
+ * <p>Solves (if possible) a linear system, using the Gauss Jordan reduction Method</p>
  *
  */
 public class GaussReduction implements LinearSystemSolver{

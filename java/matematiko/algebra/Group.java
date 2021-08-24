@@ -40,9 +40,7 @@ package matematiko.algebra;
 
 
 /**
- * <p>Title: Group</p>
- *
- * <p>Description: Abstract definition of a Group</p>
+ * <p>Abstract definition of a Group</p>
  * @param <T>: Type of the group objects
  */
 public interface Group<T> extends Monoid<T>{

@@ -39,9 +39,7 @@
 package matematiko.algebra.linear;
 
 /**
- * <p>Title: LinearSystemSolver</p>
- *
- * <p>Description: Solves (if possible) a linear system</p>
+ * <p>Solves (if possible) a linear system</p>
  *
  */
 public interface LinearSystemSolver {

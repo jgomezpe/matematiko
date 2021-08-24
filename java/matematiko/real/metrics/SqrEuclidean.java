@@ -39,9 +39,7 @@
 package matematiko.real.metrics;
 
 /**
- * <p>Title: SqrEuclidean</p>
- *
- * <p>Description: Calculates the square Euclidean distance between two real vectors</p>
+ * <p>Calculates the square Euclidean distance between two real vectors</p>
  *
  */
 public class SqrEuclidean extends PMinkowski{

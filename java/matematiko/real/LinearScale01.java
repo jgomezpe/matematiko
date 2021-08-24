@@ -41,9 +41,7 @@ package matematiko.real;
 import matematiko.scale.ReversableScale;
 
 /**
- * <p>Title: LinearScale01</p>
- *
- * <p>Description: A linear scaling process to the [0,1] interval for the [min,max] interval</p>
+ * <p>A linear scaling process to the [0,1] interval for the [min,max] interval</p>
  *
  */
 public class LinearScale01 implements ReversableScale<Double>{

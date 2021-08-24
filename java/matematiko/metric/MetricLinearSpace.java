@@ -41,9 +41,7 @@ package matematiko.metric;
 import matematiko.algebra.linear.LinearSpace;
 
 /**
- * <p>Title: MetricLinearSpace</p>
- *
- * <p>Description: A metric linear space </p>
+ * <p>A metric linear space </p>
  * @param <T>: Type of objects in the mectric linear space
  */
 public interface MetricLinearSpace<T> extends LinearSpace<T>, QuasiMetric<T> {}

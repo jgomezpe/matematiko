@@ -39,9 +39,7 @@
 package matematiko.algebra;
 
 /**
- * <p>Title: Groupoid</p>
- *
- * <p>Description: Abstract definition of a Groupoid</p>
+ * <p>Abstract definition of a Groupoid</p>
  * @param <T>: Type of the groupoid objects
  *
  */

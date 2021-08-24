@@ -41,9 +41,7 @@ package matematiko.algebra.linear;
 import matematiko.algebra.Group;
 
 /**
- * <p>Title: LinearSpace</p>
- *
- * <p>Description: Abstract definition of a linear space which is a Group and has ScalarProduct </p>
+ * <p>Abstract definition of a linear space which is a Group and has ScalarProduct </p>
  * @param <T>: Type of the linear space objects
  *
  */

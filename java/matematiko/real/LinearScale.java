@@ -39,9 +39,7 @@
 package matematiko.real;
 
 /**
- * <p>Title: LinearScale</p>
- *
- * <p>Description: A linear scaling process to the [min,max] interval for the [originalmin,originalmax] interval</p>
+ * <p>A linear scaling process to the [min,max] interval for the [originalmin,originalmax] interval</p>
  *
  */
 public class LinearScale extends LinearScale01{

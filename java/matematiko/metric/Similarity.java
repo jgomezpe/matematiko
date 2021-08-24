@@ -39,11 +39,12 @@
 package matematiko.metric;
 
 /**
- * <p>Title: Similarity</p>
- * <p>Description: Represents a similarity measure. A similarity measure satisfies the following conditions:</p>
- * <p>d(x,y) &gt;= 0</p>
- * <p>d(x,x) = 0</p>
- * <p>d(x,y)=0 -&gt; x = y</p>
+ * <p>Represents a similarity measure. A similarity measure satisfies the following conditions:</p>
+ * <ul>
+ * <li>d(x,y) &gt;= 0</li>
+ * <li>d(x,x) = 0</li>
+ * <li>d(x,y)=0 -&gt; x = y</li>
+ * </ul>
  * @param <T>: Type of elements the similarity measure is computed on
  */
 public interface Similarity<T> extends QuasiMetric<T> {

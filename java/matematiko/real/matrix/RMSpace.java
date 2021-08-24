@@ -41,8 +41,7 @@ import kopii.Copier;
 import matematiko.algebra.linear.LinearSpace;
 
 /**
- * <p>Title: RMSpace</p>
- * <p>Description: Real matrices space.</p>
+ * <p>Real matrices space.</p>
  */
 public class RMSpace implements LinearSpace<double[][]> {
 	/**

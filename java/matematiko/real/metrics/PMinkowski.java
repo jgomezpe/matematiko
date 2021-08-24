@@ -41,9 +41,7 @@ package matematiko.real.metrics;
 import matematiko.metric.*;
 
 /**
- * <p>Title: PMinkowski</p>
- * <p>Description: Calculates the PMinkowski distance between two real vectors,
- * <p>without calculating the p-root</p>
+ * <p>Calculates the PMinkowski distance between two real vectors, without calculating the p-root</p>
  */
 public class PMinkowski implements Distance<double[]> {
 	/**

@@ -40,11 +40,10 @@ package matematiko.metric;
 
 import kompari.Order;
 import kompari.real.RealOrder;
-import kompari.real.L2HOrder;
+import kompari.real.RealL2HOrder;
 
 /**
- * <p>Title: DistanceOrder</p>
- * <p>Description: Defines an order based on the distance to a predefined element </p>
+ * <p>Defines an order based on the distance to a predefined element </p>
  * @param <T>: Type of elements the order is computed on
  *
  */
@@ -61,7 +60,7 @@ public class DistanceOrder<T> implements Order<T>{
 	public DistanceOrder( Distance<T> distance, T point ){
 		this.distance = distance;
 		this.point = point;
-		this.order = new L2HOrder();
+		this.order = new RealL2HOrder();
 	}
 
 	/**

@@ -38,13 +38,11 @@
  */
 package matematiko.statistics;
 
-import kompari.real.L2HOrder;
+import kompari.real.RealL2HOrder;
 import speco.array.sort.Merge;
 
 /**
- * <p>Title: </p>
- *
- * <p>Description: </p>
+ * <p>Statistical information of numeric variables, includes median</p>
  *
  */
 public class StatisticsWithMedian extends Statistics{
@@ -91,7 +89,7 @@ public class StatisticsWithMedian extends Statistics{
 	 * @param x Array to be analyzed
 	 */
 	private void compute_median(double[] x){
-		Merge<Double> merge = new Merge<Double>(new L2HOrder());
+		Merge<Double> merge = new Merge<Double>(new RealL2HOrder());
 		x = x.clone();
 		merge.apply(x);
 		int n = x.length;

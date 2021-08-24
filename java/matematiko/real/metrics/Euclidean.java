@@ -39,8 +39,7 @@
 package matematiko.real.metrics;
 
 /**
- * <p>Title: Euclidean</p>
- * <p>Description: Calculates the Euclidean distance between two real vectors</p>
+ * <p>Calculates the Euclidean distance between two real vectors</p>
  */
 public class Euclidean extends Minkowski {
 	/**

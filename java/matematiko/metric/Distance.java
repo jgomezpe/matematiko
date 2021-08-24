@@ -39,13 +39,14 @@
 package matematiko.metric;
 
 /**
- * <p>Title: Distance</p>
- * <p>Description: Represents a distance. A distance satisfies the following conditions:</p>
- * <p>d(x,y) &gt;= 0</p>
- * <p>d(x,x) = 0</p>
- * <p>d(x,y)=0 -&gt; x = y</p>
- * <p>d(x,z) &lt;= d(x,y) + d(y,z)</p>
- * <p>d(x,y) = d(y,x) </p>
+ * <p>Represents a distance. A distance satisfies the following conditions:</p>
+ * <ul>
+ * <li>d(x,y) &gt;= 0</li>
+ * <li>d(x,x) = 0</li>
+ * <li>d(x,y)=0 -&gt; x = y</li>
+ * <li>d(x,z) &lt;= d(x,y) + d(y,z)</li>
+ * <li>d(x,y) = d(y,x) </li>
+ * </ul>
  * @param <T>: Type of elements the distance is computed on
  */
 public interface Distance<T> extends QuasiMetric<T> {}
